@@ -15,25 +15,11 @@ Despite the popularity of Airbnb, the convenience it offers travelers, and the b
 
 In Montreal, the situation is just as stark. The Plateau and Ville-Marie (downtown), two boroughs with the highest number of available Airbnb listings, also have the lowest housing vacancy rate across the city. A [2017 study](https://globalnews.ca/news/4271771/montreal-borough-votes-to-restrict-airbnb-style-rentals-in-downtown-core/) by McGill University found that Airbnb has removed 14000 units from the city. Airbnb has disputed the results, pointing to the fact that 63 percent of listings were listed for fewer than 90 days. However, other problems arise. Illegal online apartment rentals are [so widespread](https://globalnews.ca/news/4826933/montreal-airbnb-illegal-apartments/) that the city is enlisting citizens, municipal workers, and the provincial revenue department to remove key safes left on public property (in 2015, the Quebec government passed a law requiring proper certification for people using a secondary residence for short-term rentals). 
 
-Moreover, the question as to how Airbnb drives gentrification in Montreal is not presently well understood. The borough of Parc-Extension, a historical landing spot for immigrants to Canada, has seen a [steep increase](https://www.cbc.ca/news/canada/montreal/parc-extension-gentrification-universite-de-montreal-1.4650697) in rent and housing prices, largely due to development. My goal with this project is to understand the dynamics of Airbnb in this borough, as well as others in Montreal, in hopes of understanding how prevalence of Airbnb listings interacts with and drives gentrification in the city.
+Moreover, the question as to how Airbnb drives gentrification in Montreal is not presently well understood. The borough of Parc-Extension, a historical landing spot for immigrants and also the city's lowest-income neighbourhood, has seen a [drastic increase](https://www.cbc.ca/news/canada/montreal/parc-extension-gentrification-universite-de-montreal-1.4650697) in rent and housing prices, largely due to development. Parc Ex, as it is known, is ranked the fifth poorest neighbourhood in Canada with [44 percent](http://www.centraide-mtl.org/documents/5779/upload/documents/PortraitDeTerritoire_VilleraySaintMichel_Parc-Extension-Ang_1.pdf) of the population live below the poverty line. Gentrification in this neighbourhood is currently [being driven](https://www.nationalobserver.com/2018/12/11/features/new-university-campus-squeezing-montreals-poorest-neighbourhood?fbclid=IwAR3WPFMGHPIpkohXBTcCjrFy7GL5U0mHr8QlczXxG5DMqXjALGgrTC5du-c) by the construction of a new campus by the University of Montreal. Many local housing activists have assembled to address this issue, including calling on the government to invest in more social housing.
 
-### Data and Methods
+My goal with this project is to understand the dynamics of Airbnb in this borough, as well as others in Montreal, in hopes of understanding how prevalence of Airbnb listings interacts with and drives gentrification in the city.
+
+### Data Sources and Methods
+The data was taken from [Inside Airbnb](http://insideairbnb.com/get-the-data.html), an independent, non-commercial site that regularly scrapes listings data from the Airbnb website. Note that another available data source is [Tom Slee](http://tomslee.net/airbnb-data-collection-get-the-data), whose scrapes a bit more frequently but is not as up-to-date.
 
 
-
-## Sources
-1 https://www.cbc.ca/news/canada/montreal/parc-extension-gentrification-universite-de-montreal-1.4650697
-# https://www.nationalobserver.com/2018/12/11/features/new-university-campus-squeezing-montreals-poorest-neighbourhood?fbclid=IwAR3WPFMGHPIpkohXBTcCjrFy7GL5U0mHr8QlczXxG5DMqXjALGgrTC5du-c
-# 
-# http://insideairbnb.com/get-the-data.html
-# http://tomslee.net/airbnb-data-collection-get-the-data
-
-# number of total listings over time
-# listings availability over time (days per year as bar chart)
-# single vs multiple listings
-# neighbourhoods with most listings, highest price
-# listings mapped
-# distribution in the top 5 neighbourhoods
-# map airbnb revenue as a % of total rental revenue
-# frequently rented and days rented
-# revenue earned by airbnb in the last year by geographic component
