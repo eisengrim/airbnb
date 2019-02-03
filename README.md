@@ -21,7 +21,7 @@ Moreover, the question as to how Airbnb drives gentrification in Montreal is not
 
 My goal with this project is to understand the dynamics of Airbnb in this borough, as well as others in Montreal, in hopes of understanding how prevalence of Airbnb listings interacts with and drives gentrification in the city. The data was taken from [Inside Airbnb](http://insideairbnb.com/get-the-data.html), an independent, non-commercial site that regularly scrapes listings data from the Airbnb website. Note that another available data source is [Tom Slee](http://tomslee.net/airbnb-data-collection-get-the-data), whose scrapes a bit more frequently but is not as up-to-date.
 
-![Figure 1](https://github.com/eisengrim/airbnb/blob/master/airbnb-availability.png) Figure 1 shows 
+![Figure 1](https://raw.githubusercontent.com/eisengrim/airbnb/master/airbnb-availability.png) Figure 1 shows 
 
-![Figure 2](https://github.com/eisengrim/airbnb/blob/master/airbnb-colonization-1.png) shows...
+![Figure 2](https://raw.githubusercontent.com/eisengrim/airbnb/master/airbnb-colonization-1.png) FIgure 2 shows...
                                                          
