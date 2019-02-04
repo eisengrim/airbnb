@@ -9,6 +9,12 @@
 # https://medium.com/athenslivegr/mapping-the-dominance-of-airbnb-in-athens-4cb9e0657e80
 # http://insideairbnb.com/get-the-data.html
 # http://tomslee.net/airbnb-data-collection-get-the-data
+# https://www.airdna.co/vacation-rental-data/app/ca/quebec/montreal/overview
+# https://towardsdatascience.com/statistical-overview-of-barcelonas-airbnb-market-83dc7d6be648 
+# https://github.com/pauljeon/airbnb-data-analysis
+
+# https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-018-0156-6
+# https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3006832
 
 # number of total listings over time
 # listings availability over time (days per year as bar chart)
@@ -19,6 +25,8 @@
 # map airbnb revenue as a % of total rental revenue
 # frequently rented and days rented
 # revenue earned by airbnb in the last year by geographic component
+
+# number of reviews to predict occupancy?
 
 # where is airbnb activity located in MTL, and how is it changing?
 # who makes money from airbnb in MTL?
@@ -72,10 +80,12 @@ site <- "http://data.insideairbnb.com/canada/qc/montreal/2018-11-12/"
 download.file(paste0(site,"visualisations/neighbourhoods.geojson"), destfile="data/neighbourhoods.geojson")
 download.file(paste0(site,"data/listings.csv.gz"), destfile="data/listings.csv.gz")
 download.file(paste0(site,"data/calendar.csv.gz"), destfile="data/calendar.csv.gz")
+download.file(paste0(site,"data/reviews.csv.gz"), destfile="data/reviews.csv.gz")
 
 # import data
 listings <-  read.csv(gzfile("data/listings.csv.gz"), header=T)
-cal <-  read.csv(gzfile("data/calendar.csv.gz"), header=T)
+cal <-  read.csv(gzfile("data/calendar.csv.gz"), header=T) # get cal for all years!
+reviews <- read.csv(gzfile("data/reviews.csv.gz"), header=T)
 nbd <- readOGR("data/neighbourhoods.geojson", "OGRGeoJSON")
 
 # tom slee's data
@@ -131,6 +141,8 @@ qcfsa <- canada[canada@data$PRUID=="24", ]
 qcfsa@data$id <- rownames(qcfsa@data)
 map.qcfsa <- fortify(qcfsa)
 map.qcfsa <- inner_join(map.qcfsa, qcfsa@data, by="id")
+
+nhpi <- read_csv("data/nhpi-mtl.csv")
 
 ################################################################################
 # merge data from tom slee -> no date?
@@ -267,12 +279,15 @@ bnb.plot <- subset(bnb, price != 0 &
 p0 <- ggplot(subset(bnb.plot,
                       neighbourhood %!in% c("Villeray-Saint-Michel-Parc-Extension")),
              aes(y=availability_365/365, x=price))
-p1 <- p0 + geom_point(alpha=0.2, color="gray50")
+p1 <- p0 + geom_point(alpha=0.2, color="gray50") 
 p2 <- p1 + geom_point(data=subset(bnb.plot,
                                   neighbourhood %in% c("Villeray-Saint-Michel-Parc-Extension")),
                       mapping = aes(y=availability_365/365, x=price,
                                     color=neighbourhood)) + 
   scale_color_manual(values=plasma(3)) +
+  geom_vline(data=subset(bnb.plot,
+                         neighbourhood %in% c("Villeray-Saint-Michel-Parc-Extension")),
+             mapping = aes(xintercept=mean(price)), colour=viridis(1))+
   facet_wrap(. ~ date)
 p3 <- p2 + scale_x_log10(labels=scales::comma) +
   scale_y_continuous(labels=scales::percent) +
